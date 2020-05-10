@@ -20,7 +20,7 @@
   <script>
     // TODO: these should be configurable
     let src = "http://127.0.0.1:8000/"
-    let list_file = "activities.txt"
+    let list_file = "filelist.txt"
     let color = "#000000";
     let opacity = .7;
     let weight = 4;
@@ -45,7 +45,7 @@
     });
 
     $.get(src + list_file, function(data) {
-      data.split("\n").forEach(g => omnivore.gpx(src + g + ".gpx", null, layer));
+      data.split("\n").forEach(g => omnivore.gpx(src + g, null, layer));
       layer.addTo(map);
     });
   </script>
